@@ -12,9 +12,6 @@ function Footer() {
           For more details or quotes on our services, get in touch with us
           today!
         </p>
-        <p className="footer-subscription-text">
-          You can unsubscribe at any time.
-        </p>
         <div className="input-areas">
           <form>
             <input
@@ -23,7 +20,7 @@ function Footer() {
               type="email"
               placeholder="Your Email"
             />
-            <Button buttonStyle="btn--outline">Subscribe</Button>
+            <Button buttonStyle="btn--outline">Contact Us</Button>
           </form>
         </div>
       </section>
@@ -31,7 +28,7 @@ function Footer() {
         <div className="social-media-wrap">
           <div className="footer-logo">
             <Link to="/" className="navbar-logo">
-              <img src={Logo} height={170} width={200} alt="Logo" />
+              <img src={Logo} height={160} width={200} alt="Logo" />
             </Link>
           </div>
           <div className="website-rights">Bean to Cup © 2023</div>

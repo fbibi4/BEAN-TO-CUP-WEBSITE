@@ -67,9 +67,12 @@ function Navbar() {
               onMouseEnter={onMouseEnter}
               onMouseLeave={onMouseLeave}
             >
-              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+              <Link to="#" className="nav-links" onClick={closeMobileMenu}>
                 Coffee Machine Services{" "}
-                <i className="fa-solid fa-chevron-down fa-2xs" />
+                <i
+                  className="fa-solid fa-chevron-down fa-2xs"
+                  id="dropdownmenu"
+                />
               </Link>
               {dropdown && <Dropdown />}
               <ul className="dropdown-menu">
@@ -94,7 +97,7 @@ function Navbar() {
               </ul>
             </li>
             <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+              <Link to="#" className="nav-links" onClick={closeMobileMenu}>
                 Shop{" "}
                 <i
                   className="fa-solid fa-chevron-down fa-2xs"
@@ -124,15 +127,15 @@ function Navbar() {
             </li>
             <li>
               <Link
-                to="/contact-us"
+                to="/Contact"
                 className="nav-links-mobile"
                 onClick={closeMobileMenu}
               >
-                Contact Us
+                Contact
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle="btn--outline">Contact Us</Button>}
+          {button && <Button buttonStyle="btn--outline">Contact</Button>}
         </div>
       </nav>
     </>
