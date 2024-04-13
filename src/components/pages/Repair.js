@@ -1,7 +1,7 @@
 import React from "react";
 import "../../App.css";
 import beans from "../../images/beans.jpg";
-import machine from "../../images/machine.jpg";
+import machine from "../../images/machine.png";
 import Footer from "../Footer";
 
 function Repair() {
@@ -29,7 +29,6 @@ function Repair() {
           out of action or not performing at its best. At best it is annoying,
           however, at worst it could be a loss of revenue.
           <br />
-          <br />
           In the rare event that an on-site repair is not feasible, Bean to Cup
           seamlessly steps in, offering a loan machine to ensure your business
           continues to run smoothly. Your machine is then expertly repaired
@@ -38,7 +37,6 @@ function Repair() {
           repairs; an annual service and assessment guarantee that your machine
           operates at its full potential, consistently delivering the perfect
           espresso.
-          <br />
           <br />
           Join us on a journey where excellence in coffee meets the personal
           touch – Balal Ahmed and Bean to Cup, your trusted partner in crafting

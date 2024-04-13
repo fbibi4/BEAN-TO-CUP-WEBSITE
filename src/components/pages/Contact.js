@@ -1,139 +1,73 @@
-import React from "react";
+import React, { useState } from "react";
+import emailjs from "emailjs-com";
 import "../../App.css";
-import ReactDOM from "react-dom";
 import "./Contact.css";
+import Footer from "../Footer";
 
-const Card = (props) => <div className="card">{props.children}</div>;
+const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-const Form = (props) => <form className="form">{props.children}</form>;
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-const TextInput = (props) => (
-  <div className="text-input">
-    <label
-      className={props.focus || props.value !== "" ? "label-focus" : ""}
-      htmlFor={props.name}
-    >
-      {props.label}
-    </label>
-    <input
-      className={props.focus || props.value !== "" ? "input-focus" : ""}
-      type="text"
-      name={props.name}
-      value={props.value}
-      onChange={props.onChange}
-      onInput={props.onInput}
-      onFocus={props.onFocus}
-      onBlur={props.onBlur}
-    />
-  </div>
-);
+    // Your EmailJS service ID, template ID, and Public Key
+    const serviceId = "service_ehl1q3q";
+    const templateId = "template_m9ni93e";
+    const publicKey = "UPHUzReH1WsgBFsNT";
 
-const TextArea = (props) => (
-  <div className="text-area">
-    <label
-      className={props.focus || props.value !== "" ? "label-focus" : ""}
-      htmlFor={props.name}
-    >
-      {props.label}
-    </label>
-    <textarea
-      className={props.focus || props.value !== "" ? "input-focus" : ""}
-      name={props.name}
-      value={props.value}
-      onChange={props.onChange}
-      onInput={props.onInput}
-      onFocus={props.onFocus}
-      onBlur={props.onBlur}
-    />
-  </div>
-);
-
-const Button = (props) => <button className="button">{props.children}</button>;
-
-class Contact extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      name: {
-        name: "name",
-        label: "Name",
-        value: "",
-        focus: false,
-      },
-      email: {
-        name: "email",
-        label: "Email",
-        value: "",
-        focus: false,
-      },
-      message: {
-        name: "message",
-        label: "Message",
-        value: "",
-        focus: false,
-      },
+    // Create a new object that contains dynamic template params
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      to_name: "Bean to Cup",
+      message: message,
     };
-  }
 
-  handleFocus(e) {
-    const name = e.target.name;
-    const state = Object.assign({}, this.state[name]);
-    state.focus = true;
-    this.setState({ [name]: state }, () => {
-      console.log(state);
-    });
-  }
+    // Send the email using EmailJS
+    emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
+      .then((response) => {
+        console.log("Email sent successfully!", response);
+        setName("");
+        setEmail("");
+        setMessage("");
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+      });
+  };
 
-  handleBlur(e) {
-    const name = e.target.name;
-    const state = Object.assign({}, this.state[name]);
-    state.focus = false;
-    this.setState({ [name]: state }, () => {
-      console.log(state);
-    });
-  }
-
-  handleChange(e) {
-    const name = e.target.name;
-    const state = Object.assign({}, this.state[name]);
-    state.value = e.target.value;
-    this.setState({ [name]: state }, () => {
-      console.log(state);
-    });
-  }
-
-  render() {
-    const { name, email, message } = this.state;
-    return (
+  return (
+    <>
       <div className="container">
-        <Card>
+        <form onSubmit={handleSubmit} className="Contact">
           <h1>Send us a Message!</h1>
-          <Form>
-            <TextInput
-              {...name}
-              onFocus={this.handleFocus.bind(this)}
-              onBlur={this.handleBlur.bind(this)}
-              onChange={this.handleChange.bind(this)}
-            />
-            <TextInput
-              {...email}
-              onFocus={this.handleFocus.bind(this)}
-              onBlur={this.handleBlur.bind(this)}
-              onChange={this.handleChange.bind(this)}
-            />
-            <TextArea
-              {...message}
-              onFocus={this.handleFocus.bind(this)}
-              onBlur={this.handleBlur.bind(this)}
-              onChange={this.handleChange.bind(this)}
-            />
-            <Button>Send</Button>
-          </Form>
-        </Card>
+          <input
+            type="text"
+            placeholder="Your Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <textarea
+            cols="30"
+            rows="10"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          ></textarea>
+          <button type="submit">Send Email</button>
+        </form>
       </div>
-    );
-  }
-}
+      <Footer />
+    </>
+  );
+};
 
-ReactDOM.render(<Contact />, document.getElementById("root"));
 export default Contact;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { MenuItems } from "./MenuItems";
 function Dropdown() {
   const [click, setClick] = useState(false);
 
@@ -8,7 +8,7 @@ function Dropdown() {
 
   return (
     <>
-      {/* <ul
+      <ul
         onClick={handleClick}
         className={click ? "dropdown-menu clicked" : "dropdown-menu"}
       >
@@ -25,7 +25,7 @@ function Dropdown() {
             </li>
           );
         })}
-      </ul> */}
+      </ul>
     </>
   );
 }

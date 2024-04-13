@@ -2,7 +2,7 @@ import React from "react";
 import "../../App.css";
 import about from "../../images/about.jpg";
 import signature from "../../images/signature.png";
-import coffee from "../../images/coffee.jpg";
+import coffee from "../../images/coffee.png";
 import Footer from "../Footer";
 
 function RefurbishedMachines() {
