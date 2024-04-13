@@ -70,8 +70,8 @@ function Navbar() {
               <Link to="#" className="nav-links" onClick={closeMobileMenu}>
                 Coffee Machine Services{" "}
                 <i
-                  className="fa-solid fa-chevron-down fa-2xs"
-                  id="dropdownmenu"
+                // className="fa-solid fa-chevron-down fa-2xs"
+                // id="dropdownmenu"
                 />
               </Link>
               {dropdown && <Dropdown />}
@@ -100,8 +100,8 @@ function Navbar() {
               <Link to="#" className="nav-links" onClick={closeMobileMenu}>
                 Shop{" "}
                 <i
-                  className="fa-solid fa-chevron-down fa-2xs"
-                  id="dropdownmenu"
+                // className="fa-solid fa-chevron-down fa-2xs"
+                // id="dropdownmenu"
                 />
               </Link>
               <ul className="dropdown-menu">
@@ -135,7 +135,7 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle="btn--outline">Contact</Button>}
+          {button && <Button buttonStyle="btn--outline">Contact Us</Button>}
         </div>
       </nav>
     </>

@@ -58,7 +58,20 @@ header > h1 {
   flex-wrap: wrap;
   width: 500px;
   max-height: 380px;
-  padding-left: 20px;
+  margin-left: 20px;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+#coffee {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 500px;
+  max-height: 400px;
+  margin-left: 20px;
+  margin-top: 5px;
+  border-radius: 10px;
 }
 
 .home,
@@ -91,7 +104,7 @@ header > h1 {
 }
 
 .repair {
-  background-image: url("./images/coffee.jpg");
+  background-image: url("./images/coffee.png");
   background-position: center;
   background-size: fill;
   background-repeat: no-repeat;
@@ -109,7 +122,8 @@ header > h1 {
 }
 
 #coffee2 {
-  max-width: 400px;
-  max-height: 600px;
-  padding: 0px 20px;
+  min-width: 450px;
+  max-height: 500px;
+  margin-left: 20px;
+  border-radius: 10px;
 }

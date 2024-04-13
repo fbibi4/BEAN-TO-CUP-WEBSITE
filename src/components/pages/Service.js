@@ -2,7 +2,7 @@ import React from "react";
 import "../../App.css";
 import about from "../../images/about.jpg";
 import signature from "../../images/signature.png";
-import coffee from "../../images/coffee.jpg";
+import coffee from "../../images/coffee.png";
 import Footer from "../Footer";
 
 function Service() {
@@ -42,7 +42,7 @@ function Service() {
           <br />
           <img id="signature" src={signature} alt="Balal's Signature" />
         </p>
-        <img id="machine" src={coffee} alt="Fixing Machine" />
+        <img id="coffee" src={coffee} alt="Fixing Machine" />
       </section>
 
       <Footer />
